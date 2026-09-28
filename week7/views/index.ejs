@@ -3,37 +3,20 @@
 <head>
     <title><%= title %></title>
 </head>
-
 <body>
-
     <h1><%= title %></h1>
 
-    <% if (error) { %>
-        <p style="color: red;"><%= error %></p>
+    <form action="/register" method="POST">
+        <label>Username:</label>
+        <input type="text" name="username">
+        <br><br>
+        <label>Age:</label>
+        <input type="number" name="age">
+        <br><br>
+        <button type="submit">Register</button>
+    </form>
+    <% if (message) { %>
+        <h3><%= message %></h3>
     <% } %>
-
-    <% if (user) { %>
-        <h2>Registration Successful!</h2>
-        <p>Welcome, <%= user %>!</p>
-    <% } else { %>
-
-        <form action="/register" method="POST">
-
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username">
-
-            <br><br>
-
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age">
-
-            <br><br>
-
-            <button type="submit">Register</button>
-
-        </form>
-
-    <% } %>
-
 </body>
 </html>
